@@ -4,8 +4,8 @@
 
 ## Build and Deployment Information
 [![Circle CI](https://circleci.com/gh/alexkramer/force-vue/tree/master.svg?style=svg)](https://circleci.com/gh/alexkramer/force-vue/tree/master)
-[![Code Climate GPA](https://codeclimate.com/github/alexkramer/force-vue/badges/gpa.svg)](https://codeclimate.com/github/alexkramer/force-vue)
-[![Code Climate Issues](https://codeclimate.com/github/alexkramer/force-vue/badges/issue_count.svg)](https://codeclimate.com/github/alexkramer/force-vue/issues)
+[![Code Climate GPA](https://codeclimate.com/github/alexkramer/force-vue/badges/gpa.svg?style=svg)](https://codeclimate.com/github/alexkramer/force-vue)
+[![Code Climate Issues](https://codeclimate.com/github/alexkramer/force-vue/badges/issue_count.svg?style=svg)](https://codeclimate.com/github/alexkramer/force-vue/issues)
 [![Join the chat at https://gitter.im/alexkramer/force-vue](https://badges.gitter.im/alexkramer/force-vue.svg)](https://gitter.im/alexkramer/force-vue?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Build Setup
