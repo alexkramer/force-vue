@@ -1,6 +1,9 @@
 # force-vue
 
-> Simple Vue application with [SWAPI](http://swapi.co/) integration
+> Vue application with [SWAPI](http://swapi.co/) integration
+
+## Build and Deployment Information
+[![Circle CI](https://circleci.com/gh/alexkramer/force-vue/tree/master.svg?style=svg)](https://circleci.com/gh/alexkramer/force-vue/tree/master)
 
 ## Build Setup
 

@@ -1,6 +1,6 @@
 <template>
   <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
-    <mdl-button v-mdl-ripple-effect colored icon raised v-on:click="fetchRandomPerson">
+    <mdl-button class="randPersonBtn" v-mdl-ripple-effect colored icon raised v-on:click="fetchRandomPerson">
       <i class="material-icons">face</i> Random Person
     </mdl-button>
     <mdl-textfield floating-label="Name" :value.sync="personData.name"></mdl-textfield>
