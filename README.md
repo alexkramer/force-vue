@@ -4,6 +4,9 @@
 
 ## Build and Deployment Information
 [![Circle CI](https://circleci.com/gh/alexkramer/force-vue/tree/master.svg?style=svg)](https://circleci.com/gh/alexkramer/force-vue/tree/master)
+<a href="https://codeclimate.com/github/alexkramer/force-vue"><img src="https://codeclimate.com/github/alexkramer/force-vue/badges/gpa.svg" /></a>
+<a href="https://codeclimate.com/github/alexkramer/force-vue/coverage"><img src="https://codeclimate.com/github/alexkramer/force-vue/badges/coverage.svg" /></a>
+<a href="https://codeclimate.com/github/alexkramer/force-vue"><img src="https://codeclimate.com/github/alexkramer/force-vue/badges/issue_count.svg" /></a>
 
 ## Build Setup
 
