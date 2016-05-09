@@ -1,5 +1,7 @@
 # force-vue
 
+[![Join the chat at https://gitter.im/alexkramer/force-vue](https://badges.gitter.im/alexkramer/force-vue.svg)](https://gitter.im/alexkramer/force-vue?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 > Vue application with [SWAPI](http://swapi.co/) integration
 
 ## Build and Deployment Information
