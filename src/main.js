@@ -1,8 +1,31 @@
 import Vue from 'vue';
+// Import router and components
+import VueRouter from 'vue-router';
 import App from './App';
-
+import About from './components/About';
+import Contact from './components/Contact';
 /* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: { App },
+
+// Setup Vue to use Router
+Vue.use(VueRouter);
+// Intilized root component
+const rootComponent = Vue.extend({});
+
+const router = new VueRouter();
+router.map({
+  '/home': {
+    component: App,
+  },
+  '/about': {
+    component: About,
+  },
+  '/contact': {
+    component: Contact,
+  },
 });
+router.redirect({
+// redirect to home if not a correct route!
+  '*': '/home',
+});
+// Start view at id app
+router.start(rootComponent, '#app');
