@@ -31,3 +31,12 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Contributing
+
+1. Select an issue or create a new one to represent the work that you will perform
+2. Mark your issue with the tag 'assigned' or reference yourself in the issue so that others know you are working on it
+3. Fork the repo and implement your changes
+4. Open a pull request to reintegrate your changes
+
+> Your pull request must pass both CI and code quality checks in order to be accepted. When adding new functionality please include a test.
