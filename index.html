@@ -29,21 +29,22 @@
             </div>
             <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
                 <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                    <a class="mdl-navigation__link is-active" href="#">Home</a>
-                    <a class="mdl-navigation__link" href="#">About</a>
-                    <a class="mdl-navigation__link" href="#">Contact</a>
+                    <a class="mdl-navigation__link is-active" href="#!/home" v-link="'/home'">Home</a>
+                    <a class="mdl-navigation__link" href="#!/about" v-link="'/about'">About</a>
+                    <a class="mdl-navigation__link" href="#!/contact" v-link="'/contact'">Contact</a>
                 </nav>
             </div>
         </header>
         <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-              <a class="mdl-navigation__link is-active" href="index.html">Home</a>
-              <a class="mdl-navigation__link" href="#">About</a>
-              <a class="mdl-navigation__link" href="#">Contact</a>
+              <a class="mdl-navigation__link is-active" href="#!/home" v-link="{ path: '/home' }">Home</a>
+              <a class="mdl-navigation__link" href="#!/about" v-link="{ path: '/about' }">About</a>
+              <a class="mdl-navigation__link" href="#!/contact" v-link="{ path: '/contact' }">Contact</a>
             </nav>
         </div>
-        <main class="mdl-layout__content">
-          <app></app>
+        <main id="app" class="mdl-layout__content">
+          <!-- <app id="app"></app> -->
+          <router-view></router-view>
         </main>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
@@ -51,8 +52,8 @@
             </div>
             <div class="mdl-mini-footer__right-section">
                 <ul class="mdl-mini-footer__link-list">
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Privacy & Terms</a></li>
+                    <li><a href="#!/help">Help</a></li>
+                    <li><a href="#!/terms">Privacy & Terms</a></li>
                 </ul>
             </div>
         </footer>
