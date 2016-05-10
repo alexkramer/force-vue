@@ -4,10 +4,13 @@ import VueRouter from 'vue-router';
 import App from './App';
 import About from './components/About';
 import Contact from './components/Contact';
+
 /* eslint-disable no-new */
 
 // Setup Vue to use Router
 Vue.use(VueRouter);
+// Setup Resource
+Vue.use(require('vue-resource'));
 // Intilized root component
 const rootComponent = Vue.extend({});
 
