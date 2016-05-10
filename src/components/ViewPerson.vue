@@ -11,6 +11,13 @@
     <mdl-textfield floating-label="Birth Year" :value.sync="personData.birth_year"></mdl-textfield>
     <mdl-textfield floating-label="Gender" :value.sync="personData.gender"></mdl-textfield>
   </div>
+  <div class="mdl-cell mdl-card mdl-shadow--4dp">
+    <figure class="mdl-card__media">
+      <div v-show="loading" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+      <img v-show="imageShow" :src.sync="personImage">
+      <span>{{personImageMsg}}</span>
+    </figure>
+  </div>
 </template>
 
 <script>
@@ -34,13 +41,30 @@ export default {
         birth_year: '',
         gender: '',
       },
+      personImage: '',
+      personImageMsg: '',
+      imageShow: false,
+      loading: false,
     };
   },
   methods: {
     fetchRandomPerson() {
+      this.loading = true;
+      this.imageShow = false;
+      this.personImageMsg = '';
       const randomPersonId = Math.floor((Math.random() * 87) + 1);
       person.fetch(randomPersonId).then((personData) => {
         this.personData = Object.assign(this.personData, personData);
+        person.getPicture(this.personData.name).then((data) => {
+          this.loading = false;
+          if (data) {
+            this.personImage = data;
+            this.imageShow = true;
+          } else {
+            this.personImage = '';
+            this.personImageMsg = 'No image found.';
+          }
+        });
       });
     },
   },
@@ -51,5 +75,11 @@ export default {
 <style scoped>
 h1 {
   color: black;
+}
+figure img {
+  width: 285px;
+}
+.mdl-card__media {
+  background-color: #FFF;
 }
 </style>
