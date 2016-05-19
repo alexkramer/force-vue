@@ -2,8 +2,9 @@
 // http://nightwatchjs.org/guide#usage
 var config = require('../../../config')
 var port = process.env.PORT || config.dev.port
-var ui = require('../ui-properties/ui-locators')
+var ui = require('../ui-properties/ui-locators.js')
 var host = config.dev.host || require('os').hostname() || "localhost"
+var testUrl = 'http://' + host + ':'+port
 
 module.exports = {
   'default e2e tests': function (browser) {
@@ -17,9 +18,9 @@ module.exports = {
 
   'starship e2e tests': function (browser) {
     browser
-    .url('http://' + host + ':'+port)
+    .url(testUrl)
       .waitForElementVisible(ui.dev.app, 5000)
-      .setValue(ui.dev.select,ui.dev.selectValue.startship)
+      .setValue(ui.dev.select,ui.dev.selectValue.starship)
       .click(ui.dev.select)
       .pause(1000)
       .keys(['\uE006']) //hits the enter key.
