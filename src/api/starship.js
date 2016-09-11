@@ -5,7 +5,7 @@ import { Promise } from 'es6-promise';
 
 const starshipCache = Object.create(null);
 const starship = new EventEmitter();
-const starshipBaseUrl = 'http://swapi.co/api/starships/';
+const starshipBaseUrl = 'starships/';
 export default starship;
 
 starship.fetch = id => {

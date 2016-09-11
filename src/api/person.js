@@ -5,8 +5,7 @@ import { Promise } from 'es6-promise';
 const personCache = Object.create(null);
 const pictureCache = Object.create(null);
 const person = new EventEmitter();
-const personBaseUrl = 'http://swapi.co/api/people/';
-const imgurBaseUrl = 'https://api.imgur.com/3/gallery/search/';
+const personBaseUrl = 'people/';
 export default person;
 
 person.fetch = id => {
@@ -37,8 +36,12 @@ person.getPicture = searchWord => {
       q: searchWord,
       q_type: 'jpg',
     };
-    Vue.http.headers.common.Authorization = 'Client-ID e261b9fcc41f315';
-    Vue.http.get(imgurBaseUrl, param).then(response => {
+    Vue.http.headers.common.Authorization = '';
+    Vue.http.get(process.env.IMAGE_HOST, param, {
+      headers: {
+        Authorization: process.env.IMGUR_CLIENT_ID,
+      },
+    }).then(response => {
       let imgUrl = null;
       if (typeof response.data === 'undefined' || typeof response.data.data[0] === 'undefined') {
         imgUrl = null;
