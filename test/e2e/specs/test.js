@@ -3,13 +3,11 @@
 var config = require('../../../config')
 var port = process.env.PORT || config.dev.port
 var ui = require('../ui-properties/ui-locators.js')
-var host = config.dev.host || require('os').hostname() || "localhost"
-var testUrl = 'http://' + host + ':'+port
 
 module.exports = {
   'default e2e tests': function (browser) {
     browser
-    .url('http://localhost:8080')
+    .url(browser.launchUrl)
       .waitForElementVisible('#app', 5000)
       .assert.elementPresent('.randPersonBtn')
       .pause(5000)
@@ -18,7 +16,7 @@ module.exports = {
 
   'starship e2e tests': function (browser) {
     browser
-    .url(testUrl)
+    .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.app, 5000)
       .setValue(ui.dev.select,ui.dev.selectValue.starship)
       .click(ui.dev.select)

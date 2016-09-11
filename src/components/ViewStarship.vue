@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import starship from '../api/starship';
 import { MdlButton, MdlTextfield, directives } from 'vue-mdl';
+import starship from '../api/starship';
 
 export default {
   components: {

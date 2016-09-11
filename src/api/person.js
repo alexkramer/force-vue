@@ -1,5 +1,4 @@
 import Vue from 'vue';
-Vue.use(require('vue-resource'));
 import { EventEmitter } from 'events';
 import { Promise } from 'es6-promise';
 

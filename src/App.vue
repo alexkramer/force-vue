@@ -18,6 +18,7 @@
 import ViewPerson from './components/ViewPerson';
 import ViewPlanet from './components/ViewPlanet';
 import ViewStarship from './components/ViewStarship';
+
 export default {
   components: {
     ViewPerson,
