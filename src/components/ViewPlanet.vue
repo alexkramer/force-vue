@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import planet from '../api/planet';
 import { MdlButton, MdlTextfield, directives } from 'vue-mdl';
+import planet from '../api/planet';
 
 export default {
   components: {

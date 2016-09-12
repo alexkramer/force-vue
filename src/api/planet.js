@@ -5,7 +5,7 @@ import { Promise } from 'es6-promise';
 
 const planetCache = Object.create(null);
 const planet = new EventEmitter();
-const planetBaseUrl = 'http://swapi.co/api/planets/';
+const planetBaseUrl = 'planets/';
 export default planet;
 
 planet.fetch = id => {

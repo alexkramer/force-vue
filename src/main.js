@@ -11,6 +11,10 @@ import Contact from './components/Contact';
 Vue.use(VueRouter);
 // Setup Resource
 Vue.use(require('vue-resource'));
+
+// Set API host
+Vue.http.options.root = process.env.API_HOST;
+
 // Intilized root component
 const rootComponent = Vue.extend({});
 

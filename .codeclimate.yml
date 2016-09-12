@@ -6,7 +6,8 @@ engines:
       languages:
       - javascript
   eslint:
-    enabled: true
+    enabled: false
+    channel: "eslint-2"
   fixme:
     enabled: true
 ratings:

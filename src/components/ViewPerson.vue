@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import person from '../api/person';
 import { MdlButton, MdlTextfield, directives } from 'vue-mdl';
+import person from '../api/person';
 
 export default {
   components: {
