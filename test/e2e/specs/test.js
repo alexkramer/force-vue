@@ -28,11 +28,13 @@ module.exports = {
     browser
       .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.app, 5000)
+      // Ugly code reason: Firefox has problems with changing the dropdown.
+      // Refactor this into a function next iteration.
       .setValue(ui.dev.select,ui.dev.selectValue.planet)
       .click(ui.dev.select)
       .pause(1000)
       .keys(['\uE006']) //hits the enter key.
-      .waitForElementVisible(ui.dev.randomBtn.planet, 5000)
+      .pause(3000)
       .assert.elementPresent(ui.dev.randomBtn.planet)
       .assert.elementCount(ui.dev.tableRecord, 9)
       .pause(5000)
