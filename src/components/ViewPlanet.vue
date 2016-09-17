@@ -1,6 +1,6 @@
 <template>
   <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
-    <mdl-button class="randplanetBtn" v-mdl-ripple-effect colored icon raised v-on:click="fetchRandomPlanet">
+    <mdl-button class="randPlanetBtn" v-mdl-ripple-effect colored icon raised v-on:click="fetchRandomPlanet">
       <i class="material-icons">public</i> Random planet
     </mdl-button>
     <mdl-textfield floating-label="Name" :value.sync="planetData.name"></mdl-textfield>
