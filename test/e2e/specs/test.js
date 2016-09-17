@@ -29,6 +29,8 @@ module.exports = {
       .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.app, 5000)
       .setValue(ui.dev.select,ui.dev.selectValue.planet)
+      .click(ui.dev.select)
+      .pause(1000)
       .assert.elementPresent(ui.dev.randomBtn.planet)
       .assert.elementCount(ui.dev.tableRecord, 9)
       .pause(5000)
