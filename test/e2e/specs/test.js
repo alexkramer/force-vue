@@ -68,6 +68,11 @@ module.exports = {
       .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.app, 5000)
       .setValue(ui.dev.select,ui.dev.selectValue.planet)
+      .click(ui.dev.select)
+      .pause(1000)
+      .keys(['\uE006']) //hits the enter key.
+      .pause(3000)
+      .assert.elementPresent(ui.dev.randomBtn.planet)
       .getText(ui.dev.randomBtn.planet, function(result) {
         this.assert.equal(result.value,'public RANDOM PLANET')
       })
