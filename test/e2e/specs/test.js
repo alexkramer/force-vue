@@ -31,6 +31,8 @@ module.exports = {
       .setValue(ui.dev.select,ui.dev.selectValue.planet)
       .click(ui.dev.select)
       .pause(1000)
+      .keys(['\uE006']) //hits the enter key.
+      .waitForElementVisible(ui.dev.randomBtn.planet, 5000)
       .assert.elementPresent(ui.dev.randomBtn.planet)
       .assert.elementCount(ui.dev.tableRecord, 9)
       .pause(5000)
