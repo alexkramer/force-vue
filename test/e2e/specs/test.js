@@ -31,7 +31,7 @@ module.exports = {
       .setValue(ui.dev.select,ui.dev.selectValue.planet)
       .click(ui.dev.select)
       .pause(1000)
-      .keys.ENTER
+      .keys(['\uE006'])
       .pause(3000)
       .assert.elementPresent(ui.dev.randomBtn.planet)
       .assert.elementCount(ui.dev.tableRecord, 9)
@@ -68,7 +68,7 @@ module.exports = {
       .setValue(ui.dev.select,ui.dev.selectValue.planet)
       .click(ui.dev.select)
       .pause(1000)
-      .keys.ENTER
+      .keys(['\uE006'])
       .pause(3000)
       .assert.elementPresent(ui.dev.randomBtn.planet)
       .getText(ui.dev.randomBtn.planet, function(result) {
@@ -84,7 +84,7 @@ module.exports = {
       .setValue(ui.dev.select,ui.dev.selectValue.starship)
       .click(ui.dev.select)
       .pause(1000)
-      .keys.ENTER
+      .keys(['\uE006'])
       .pause(3000)
       .assert.elementPresent(ui.dev.randomBtn.starship)
       .click(ui.dev.randomBtn.starship)
