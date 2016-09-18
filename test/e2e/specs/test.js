@@ -3,6 +3,9 @@
 var config = require('../../../config')
 var port = process.env.PORT || config.dev.port
 var ui = require('../ui-properties/ui-locators.js')
+var personPage = require('../pages/person.js')
+var planetPage = require('../pages/planet.js')
+var starshipPage = require('../pages/starship.js')
 
 module.exports = {
   'default e2e tests': function (browser) {
@@ -20,6 +23,14 @@ module.exports = {
       .waitForElementVisible(ui.dev.app, 5000)
       .assert.elementPresent(ui.dev.randomBtn.person)
       .assert.elementCount(ui.dev.tableRecord, 7)
+      .waitForElementVisible(personPage.elements.nameTextbox, 5000) // Unsure how to hook up @nameTextBox
+      .assert.elementPresent(personPage.elements.nameTextbox) // The @nameTextbox was not working
+      .assert.elementPresent(personPage.elements.heightTextbox)
+      .assert.elementPresent(personPage.elements.massTextbox)
+      .assert.elementPresent(personPage.elements.hairColorTextbox)
+      .assert.elementPresent(personPage.elements.eyeColorTextbox)
+      .assert.elementPresent(personPage.elements.birthYearTextbox)
+      .assert.elementPresent(personPage.elements.genderTextbox)
       .pause(5000)
       .end()
   },
@@ -35,6 +46,16 @@ module.exports = {
       .pause(3000)
       .assert.elementPresent(ui.dev.randomBtn.planet)
       .assert.elementCount(ui.dev.tableRecord, 9)
+      .waitForElementVisible(planetPage.elements.nameTextbox, 5000) // Unsure how to hook up @nameTextBox
+      .assert.elementPresent(planetPage.elements.nameTextbox) // The @nameTextbox was not working
+      .assert.elementPresent(planetPage.elements.rotationPeriodTextbox)
+      .assert.elementPresent(planetPage.elements.orbitalPeriodTextbox)
+      .assert.elementPresent(planetPage.elements.diameterTextbox)
+      .assert.elementPresent(planetPage.elements.climateTextbox)
+      .assert.elementPresent(planetPage.elements.gravityTextbox)
+      .assert.elementPresent(planetPage.elements.terrainTextbox)
+      .assert.elementPresent(planetPage.elements.surfaceWaterTextbox)
+      .assert.elementPresent(planetPage.elements.populationTextbox)
       .pause(5000)
       .end()
   },
