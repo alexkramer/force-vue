@@ -1,7 +1,6 @@
 // For authoring Nightwatch tests, see
 // http://nightwatchjs.org/guide#usage
 var config = require('../../../config')
-var port = process.env.PORT || config.dev.port
 var ui = require('../ui-properties/ui-locators.js')
 var personPage = require('../pages/person.js')
 var planetPage = require('../pages/planet.js')
@@ -12,7 +11,7 @@ module.exports = {
     browser
     .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.app, 5000)
-      .assert.elementPresent(ui.dev.randomBtn.person)
+      .assert.elementPresent(personPage.elements.randomPersonButton)
       .pause(5000)
       .end()
   },
@@ -21,7 +20,7 @@ module.exports = {
     browser
       .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.app, 5000)
-      .assert.elementPresent(ui.dev.randomBtn.person)
+      .assert.elementPresent(personPage.elements.randomPersonButton)
       .assert.elementCount(ui.dev.tableRecord, 7)
       .waitForElementVisible(personPage.elements.nameTextbox, 5000) // Unsure how to hook up @nameTextBox
       .assert.elementPresent(personPage.elements.nameTextbox) // The @nameTextbox was not working
@@ -44,7 +43,7 @@ module.exports = {
       .pause(1000)
       .keys(['\uE006'])
       .pause(3000)
-      .assert.elementPresent(ui.dev.randomBtn.planet)
+      .assert.elementPresent(planetPage.elements.randomPlanetButton)
       .assert.elementCount(ui.dev.tableRecord, 9)
       .waitForElementVisible(planetPage.elements.nameTextbox, 5000) // Unsure how to hook up @nameTextBox
       .assert.elementPresent(planetPage.elements.nameTextbox) // The @nameTextbox was not working
@@ -64,8 +63,8 @@ module.exports = {
     browser
       .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.app, 5000)
-      .assert.elementPresent(ui.dev.randomBtn.person)
-      .click(ui.dev.randomBtn.person)
+      .assert.elementPresent(personPage.elements.randomPersonButton)
+      .click(personPage.elements.randomPersonButton)
       .getText(ui.dev.tableRecord, function(result) {
         this.assert.notEqual(result,'')
       })
@@ -76,7 +75,7 @@ module.exports = {
     browser
       .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.app, 5000)
-      .getText(ui.dev.randomBtn.person, function(result) {
+      .getText(personPage.elements.randomPersonButton, function(result) {
         this.assert.equal(result.value,'face RANDOM PERSON')
       })
       .end()
@@ -91,8 +90,8 @@ module.exports = {
       .pause(1000)
       .keys(['\uE006'])
       .pause(3000)
-      .assert.elementPresent(ui.dev.randomBtn.planet)
-      .getText(ui.dev.randomBtn.planet, function(result) {
+      .assert.elementPresent(planetPage.elements.randomPlanetButton)
+      .getText(planetPage.elements.randomPlanetButton, function(result) {
         this.assert.equal(result.value,'public RANDOM PLANET')
       })
       .end()
@@ -107,8 +106,8 @@ module.exports = {
       .pause(1000)
       .keys(['\uE006'])
       .pause(3000)
-      .assert.elementPresent(ui.dev.randomBtn.starship)
-      .click(ui.dev.randomBtn.starship)
+      .assert.elementPresent(starshipPage.elements.randomStarshipButton)
+      .click(starshipPage.elements.randomStarshipButton)
       .waitForElementPresent(ui.dev.tableRecord, 2000)
       .pause(3000)
       .getText(ui.dev.tableRecord, function(result) {
@@ -116,6 +115,4 @@ module.exports = {
       })
       .end()
   }
-
-
 }

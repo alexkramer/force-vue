@@ -1,5 +1,6 @@
 module.exports = {
   elements: {
+    randomStarshipButton: '.randStarshipBtn',
     nameTextbox: '[data-qa=nameTextbox] > div > input',
     modelTextbox: '[data-qa=modelTextbox] > div > input',
     manufacturerTextbox: '[data-qa=manufacturerTextbox] > div > input',

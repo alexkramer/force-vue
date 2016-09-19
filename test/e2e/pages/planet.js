@@ -1,5 +1,6 @@
 module.exports = {
   elements: {
+    randomPlanetButton: '.randPlanetBtn',
     nameTextbox: '[data-qa=nameTextbox] > div > input',
     rotationPeriodTextbox: '[data-qa=rotationPeriodTextbox] > div > input',
     orbitalPeriodTextbox: '[data-qa=orbitalPeriodTextbox] > div > input',

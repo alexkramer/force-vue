@@ -1,5 +1,6 @@
 module.exports = {
   elements: {
+    randomPersonButton: '.randPersonBtn',
     nameTextbox: '[data-qa=nameTextbox] > div > input',
     heightTextbox: '[data-qa=heightTextbox] > div > input',
     massTextbox: '[data-qa=nameTextbox] > div > input',
