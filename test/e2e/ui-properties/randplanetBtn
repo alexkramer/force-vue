@@ -11,6 +11,11 @@ module.exports = {
             starship: 'Starship',
             planet: 'Planet'
         },
-        tableRecord: '.mdl-textfield__input'
+        randomBtn: {
+            person: '.randPersonBtn',
+            starship: '.randStarshipBtn',
+            planet: '.randPlanetBtn'
+        },
+        tableRecord: '.mdl-textfield__input',
     },
 };

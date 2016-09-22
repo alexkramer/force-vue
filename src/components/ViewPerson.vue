@@ -3,13 +3,13 @@
     <mdl-button class="randPersonBtn" v-mdl-ripple-effect colored icon raised v-on:click="fetchRandomPerson">
       <i class="material-icons">face</i> Random Person
     </mdl-button>
-    <mdl-textfield floating-label="Name" :value.sync="personData.name"></mdl-textfield>
-    <mdl-textfield floating-label="Height" :value.sync="personData.height"></mdl-textfield>
-    <mdl-textfield floating-label="Mass" :value.sync="personData.mass"></mdl-textfield>
-    <mdl-textfield floating-label="Hair Color" :value.sync="personData.hair_color"></mdl-textfield>
-    <mdl-textfield floating-label="Eye Color" :value.sync="personData.eye_color"></mdl-textfield>
-    <mdl-textfield floating-label="Birth Year" :value.sync="personData.birth_year"></mdl-textfield>
-    <mdl-textfield floating-label="Gender" :value.sync="personData.gender"></mdl-textfield>
+    <mdl-textfield data-qa="nameTextbox" floating-label="Name" :value.sync="personData.name"></mdl-textfield>
+    <mdl-textfield data-qa="heightTextbox" floating-label="Height" :value.sync="personData.height"></mdl-textfield>
+    <mdl-textfield data-qa="massTextbox" floating-label="Mass" :value.sync="personData.mass"></mdl-textfield>
+    <mdl-textfield data-qa="hairColorTextbox" floating-label="Hair Color" :value.sync="personData.hair_color"></mdl-textfield>
+    <mdl-textfield data-qa="eyeColorTextbox" floating-label="Eye Color" :value.sync="personData.eye_color"></mdl-textfield>
+    <mdl-textfield data-qa="birthYearTextbox" floating-label="Birth Year" :value.sync="personData.birth_year"></mdl-textfield>
+    <mdl-textfield data-qa="genderTextbox" floating-label="Gender" :value.sync="personData.gender"></mdl-textfield>
   </div>
   <div class="mdl-cell mdl-card mdl-shadow--4dp">
     <figure class="mdl-card__media">
