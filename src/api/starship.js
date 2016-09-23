@@ -2,8 +2,9 @@ import Vue from 'vue';
 
 import { EventEmitter } from 'events';
 import { Promise } from 'es6-promise';
+import { ApiCache } from './api-cache.js';
 
-const starshipCache = Object.create(null);
+const starshipCache = new ApiCache();
 const starship = new EventEmitter();
 const starshipBaseUrl = 'starships/';
 export default starship;
@@ -13,12 +14,14 @@ starship.fetch = id => {
     return Promise.resolve('');
   }
   return new Promise((resolve, reject) => {
-    if (starshipCache[id]) {
-      resolve(starshipCache[id]);
-    }
     const starshipToGet = `${starshipBaseUrl}${id}/`;
+
+    if (starshipCache.get(starshipToGet)) {
+      resolve(starshipCache.get(starshipToGet));
+    }
     Vue.http.get(starshipToGet).then(response => {
-      const starshipData = starshipCache[id] = response.data;
+      const starshipData = response.data;
+      starshipCache.put(starshipToGet, starshipData);
       resolve(starshipData);
     }, reject);
   });
