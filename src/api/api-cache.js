@@ -13,7 +13,7 @@ class ApiCache {
   get(key) {
     const item = JSON.parse(this.store.getItem(key));
 
-    if (item && (new Date(item.expires)).getTime() < (new Date()).getTime()) {
+    if (item && (new Date(item.expires)).getTime() > (new Date()).getTime()) {
       return item.value;
     }
 
