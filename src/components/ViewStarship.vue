@@ -1,6 +1,6 @@
 <template>
   <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
-    <mdl-button class="randStarshipBtn" v-mdl-ripple-effect colored icon raised v-on:click="fetchRandomStartship">
+    <mdl-button class="randStarshipBtn" v-mdl-ripple-effect colored icon raised v-on:click="fetchRandomStarship">
       <i class="material-icons">public</i> Random starship
     </mdl-button>
     <mdl-textfield data-qa="nameTextbox" floating-label="Name" :value.sync="starshipData.name"></mdl-textfield>
@@ -50,9 +50,9 @@ export default {
     };
   },
   methods: {
-    fetchRandomStartship() {
-      const randomStartshipId = Math.floor((Math.random() * 61) + 1);
-      starship.fetch(randomStartshipId).then((starshipData) => {
+    fetchRandomStarship() {
+      const randomStarshipId = Math.floor((Math.random() * 37) + 1);
+      starship.fetch(randomStarshipId).then((starshipData) => {
         this.starshipData = Object.assign(this.starshipData, starshipData);
       });
     },

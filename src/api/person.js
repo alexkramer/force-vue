@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import { EventEmitter } from 'events';
 import { Promise } from 'es6-promise';
+import { ApiCache } from './api-cache.js';
 
-const personCache = Object.create(null);
+const personCache = new ApiCache();
 const pictureCache = Object.create(null);
 const person = new EventEmitter();
 const personBaseUrl = 'people/';
@@ -13,12 +14,14 @@ person.fetch = id => {
     return Promise.resolve('');
   }
   return new Promise((resolve, reject) => {
-    if (personCache[id]) {
-      resolve(personCache[id]);
-    }
     const personToGet = `${personBaseUrl}${id}/`;
+
+    if (personCache.get(personToGet)) {
+      resolve(personCache.get(personToGet));
+    }
     Vue.http.get(personToGet).then(response => {
-      const personData = personCache[id] = response.data;
+      const personData = response.data;
+      personCache.put(personToGet, personData);
       resolve(personData);
     }, reject);
   });
