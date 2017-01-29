@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import { EventEmitter } from 'events';
 import { Promise } from 'es6-promise';
-import { ApiCache } from './api-cache.js';
+import ApiCache from './api-cache';
 
-const personCache = new ApiCache();
+const personCache = new ApiCache(null);
 const pictureCache = Object.create(null);
 const person = new EventEmitter();
 const personBaseUrl = 'people/';

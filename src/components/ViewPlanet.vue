@@ -1,30 +1,113 @@
 <template>
-  <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
-    <mdl-button class="randPlanetBtn" v-mdl-ripple-effect colored icon raised v-on:click="fetchRandomPlanet">
-      <i class="material-icons">public</i> Random planet
-    </mdl-button>
-    <mdl-textfield data-qa="nameTextbox" floating-label="Name" :value.sync="planetData.name"></mdl-textfield>
-    <mdl-textfield data-qa="rotationPeriodTextbox" floating-label="Rotation Period" :value.sync="planetData.rotation_period"></mdl-textfield>
-    <mdl-textfield data-qa="orbitalPeriodTextbox" floating-label="Orbital Period" :value.sync="planetData.orbital_period"></mdl-textfield>
-    <mdl-textfield data-qa="diameterTextbox" floating-label="Diameter" :value.sync="planetData.diameter"></mdl-textfield>
-    <mdl-textfield data-qa="climateTextbox" floating-label="Climate" :value.sync="planetData.climate"></mdl-textfield>
-    <mdl-textfield data-qa="gravityTextbox" floating-label="Gravity" :value.sync="planetData.gravity"></mdl-textfield>
-    <mdl-textfield data-qa="terrainTextbox" floating-label="Terrain" :value.sync="planetData.terrain"></mdl-textfield>
-    <mdl-textfield data-qa="surfaceWaterTextbox" floating-label="Surface Water" :value.sync="planetData.surface_water"></mdl-textfield>
-    <mdl-textfield data-qa="populationTextbox" floating-label="Population" :value.sync="planetData.population"></mdl-textfield>
+  <div>
+    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+      <button class="mdl-button
+                     randPlanetBtn
+                     mdl-js-button
+                     mdl-button--raised
+                     mdl-js-ripple-effect
+                     mdl-button--colored"
+              v-on:click="fetchRandomPlanet">
+        <i class="material-icons">public</i> Random planet
+      </button>
+      <div class="input mdl-js-textfield input--floating-label">
+        <input type="text"
+               class="mdl-textfield__input"
+               id="planetName"
+               data-qa="nameTextbox"
+               v-model="planetData.name">
+        <label for="planetName" class="mdl-textfield__label">
+          Name
+        </label>
+      </div>
+      <div class="input mdl-js-textfield input--floating-label">
+        <input type="text"
+               class="mdl-textfield__input"
+               id="planetRotation"
+               data-qa="rotationPeriodTextbox"
+               v-model="planetData.rotation_period">
+        <label for="planetRotation" class="mdl-textfield__label">
+          Rotation Period
+        </label>
+      </div>
+      <div class="input mdl-js-textfield input--floating-label">
+        <input type="text"
+               class="mdl-textfield__input"
+               id="orbitalPeriod"
+               data-qa="orbitalPeriodTextbox"
+               v-model="planetData.orbital_period">
+        <label for="orbitalPeriod" class="mdl-textfield__label">
+          Orbital Period
+        </label>
+      </div>
+      <div class="input mdl-js-textfield input--floating-label">
+        <input type="text"
+               class="mdl-textfield__input"
+               id="planetDiameter"
+               data-qa="diameterTextbox"
+               v-model="planetData.diameter">
+        <label for="planetDiameter" class="mdl-textfield__label">
+          Diameter
+        </label>
+      </div>
+      <div class="input mdl-js-textfield input--floating-label">
+        <input type="text"
+               class="mdl-textfield__input"
+               id="planetClimate"
+               data-qa="climateTextbox"
+               v-model="planetData.climate">
+        <label for="planetClimate" class="mdl-textfield__label">
+          Climate
+        </label>
+      </div>
+      <div class="input mdl-js-textfield input--floating-label">
+        <input type="text"
+               class="mdl-textfield__input"
+               id="gravity"
+               data-qa="gravityTextbox"
+               v-model="planetData.gravity">
+        <label for="gravity" class="mdl-textfield__label">
+          Gravity
+        </label>
+      </div>
+      <div class="input mdl-js-textfield input--floating-label">
+        <input type="text"
+               class="mdl-textfield__input"
+               id="planetTerrain"
+               data-qa="terrainTextbox"
+               v-model="planetData.terrain">
+        <label for="planetTerrain" class="mdl-textfield__label">
+          Terrain
+        </label>
+      </div>
+      <div class="input mdl-js-textfield input--floating-label">
+        <input type="text"
+               class="mdl-textfield__input"
+               id="surfaceWater"
+               data-qa="surfaceWaterTextbox"
+               v-model="planetData.surface_water">
+        <label for="surfaceWater" class="mdl-textfield__label">
+          Surface Water
+        </label>
+      </div>
+      <div class="input mdl-js-textfield input--floating-label">
+        <input type="text"
+               class="mdl-textfield__input"
+               id="planetPopulation"
+               data-qa="populationTextbox"
+               v-model="planetData.population">
+        <label for="planetPopulation" class="mdl-textfield__label">
+          Population
+        </label>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { MdlButton, MdlTextfield, directives } from 'vue-mdl';
 import planet from '../api/planet';
 
 export default {
-  components: {
-    MdlButton,
-    MdlTextfield,
-  },
-  directives,
   data() {
     return {
       planetData: {

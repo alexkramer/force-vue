@@ -1,4 +1,4 @@
-import { ApiCache } from 'src/api/api-cache';
+import ApiCache from 'src/api/api-cache';
 
 describe('ApiCache', () => {
   describe('put()', () => {

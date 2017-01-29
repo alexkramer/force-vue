@@ -1,5 +1,5 @@
-class ApiCache {
-  constructor(store = null) {
+export default class ApiCache {
+  constructor(store) {
     this.store = store || localStorage;
   }
 
@@ -20,5 +20,3 @@ class ApiCache {
     return null;
   }
 }
-
-export { ApiCache };

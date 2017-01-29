@@ -2,9 +2,9 @@ import Vue from 'vue';
 
 import { EventEmitter } from 'events';
 import { Promise } from 'es6-promise';
-import { ApiCache } from './api-cache.js';
+import ApiCache from './api-cache';
 
-const planetCache = new ApiCache();
+const planetCache = new ApiCache(null);
 const planet = new EventEmitter();
 const planetBaseUrl = 'planets/';
 export default planet;

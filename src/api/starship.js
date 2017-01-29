@@ -2,9 +2,9 @@ import Vue from 'vue';
 
 import { EventEmitter } from 'events';
 import { Promise } from 'es6-promise';
-import { ApiCache } from './api-cache.js';
+import ApiCache from './api-cache';
 
-const starshipCache = new ApiCache();
+const starshipCache = new ApiCache(null);
 const starship = new EventEmitter();
 const starshipBaseUrl = 'starships/';
 export default starship;
