@@ -1,16 +1,17 @@
 <template>
   <div>
-    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+    <div class="mdl-card mdl-shadow--4dp portfolio-card">
       <button class="mdl-button
                      randPlanetBtn
                      mdl-js-button
                      mdl-button--raised
                      mdl-js-ripple-effect
                      mdl-button--colored"
-              v-on:click="fetchRandomPlanet">
+              v-mdl
+              @click="fetchRandomPlanet">
         <i class="material-icons">public</i> Random planet
       </button>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="planetName"
@@ -20,7 +21,7 @@
           Name
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="planetRotation"
@@ -30,7 +31,7 @@
           Rotation Period
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="orbitalPeriod"
@@ -40,7 +41,7 @@
           Orbital Period
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="planetDiameter"
@@ -50,7 +51,7 @@
           Diameter
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="planetClimate"
@@ -60,7 +61,7 @@
           Climate
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="gravity"
@@ -70,7 +71,7 @@
           Gravity
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="planetTerrain"
@@ -80,7 +81,7 @@
           Terrain
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="surfaceWater"
@@ -90,7 +91,7 @@
           Surface Water
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="planetPopulation"
@@ -131,5 +132,9 @@ export default {
       });
     },
   },
+  updated() {
+    const mdlInputs = document.querySelectorAll('.mdl-textfield');
+    mdlInputs.forEach(value => value.MaterialTextfield.checkDirty());
+  }
 };
 </script>

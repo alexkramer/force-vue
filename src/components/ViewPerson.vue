@@ -1,10 +1,13 @@
 <template>
   <div>
-    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
-      <button class="randPersonBtn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" v-on:click="fetchRandomPerson">
+    <div class="mdl-card mdl-shadow--4dp portfolio-card">
+      <button v-mdl
+              class="randPersonBtn mdl-button mdl-js-button mdl-button--raised
+                     mdl-js-ripple-effect mdl-button--colored"
+              @click="fetchRandomPerson">
         <i class="material-icons">face</i> Random Person
       </button>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="personDataName"
@@ -14,7 +17,7 @@
           Name
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="personDataHeight"
@@ -25,7 +28,7 @@
           Height
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text" c
                class="mdl-textfield__input"
                id="personDataMass"
@@ -35,7 +38,7 @@
           Mass
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="personDataHair"
@@ -45,7 +48,7 @@
           Hair color
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="personDataEyes"
@@ -55,7 +58,7 @@
           Eye color
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="personDataDOB"
@@ -65,7 +68,7 @@
           Birth Year
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="personDataGender"
@@ -76,13 +79,13 @@
         </label>
       </div>
     </div>
-    <div class="mdl-cell mdl-card mdl-shadow--4dp">
+    <div class="mdl-card mdl-shadow--4dp">
       <figure class="mdl-card__media">
         <div v-show="loading"
+             v-mdl
              class="mdl-spinner
                     mdl-spinner--single-color
-                    mdl-js-spinner
-                    is-active"></div>
+                    mdl-js-spinner"></div>
         <img v-show="imageShow" :src.sync="personImage">
         <span>{{personImageMsg}}</span>
       </figure>
@@ -128,10 +131,19 @@ export default {
             this.personImage = '';
             this.personImageMsg = 'No image found.';
           }
+        })
+        .catch(() => {
+          this.loading = false;
+          this.personImage = '';
+          this.personImageMsg = 'Unable to fetch image at this time.';
         });
       });
     },
   },
+  updated() {
+    const mdlInputs = document.querySelectorAll('.mdl-textfield');
+    mdlInputs.forEach(value => value.MaterialTextfield.checkDirty());
+  }
 };
 </script>
 

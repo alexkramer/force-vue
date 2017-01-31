@@ -15,7 +15,7 @@
               Please feel free to contact me, by submitting the info below.
             </p>
             <form name="contactForm">
-                <div class="input mdl-js-textfield input--floating-label">
+                <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input type="text"
                          class="mdl-textfield__input"
                          id="contactInfoName"
@@ -23,9 +23,8 @@
                   <label for="contactInfoName" class="mdl-textfield__label">
                     Name
                   </label>
-                  <span class="input__error">Letters and spaces only</span>
                 </div>
-                <div class="input mdl-js-textfield input--floating-label">
+                <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input type="text"
                          class="mdl-textfield__input"
                          id="contactInfoEmail"
@@ -34,7 +33,7 @@
                     Email
                   </label>
                 </div>
-                <div class="input mdl-js-textfield input--floating-label">
+                <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input type="text"
                          class="mdl-textfield__input"
                          id="contactInfoNote"
@@ -49,6 +48,7 @@
                                  mdl-button--raised
                                  mdl-js-ripple-effect
                                  mdl-button--colored"
+                          v-mdl
                           type="submit">
                     Submit
                   </button>

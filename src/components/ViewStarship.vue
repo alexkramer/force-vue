@@ -1,12 +1,13 @@
 <template>
   <div>
-    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+    <div class="mdl-card mdl-shadow--4dp portfolio-card">
       <button class="randStarshipBtn  mdl-button mdl-js-button mdl-button--raised
                      mdl-js-ripple-effect mdl-button--colored"
-              v-on:click="fetchRandomStarship">
+              v-mdl
+              @click="fetchRandomStarship">
         <i class="material-icons">public</i> Random starship
       </button>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipName"
@@ -16,7 +17,7 @@
           Name
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipModel"
@@ -26,7 +27,7 @@
           Model
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipManufacturer"
@@ -36,7 +37,7 @@
           Manufacturer
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipCost"
@@ -46,7 +47,7 @@
           Cost in credits
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipLength"
@@ -56,7 +57,7 @@
           Length
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipMaxSpeed"
@@ -66,7 +67,7 @@
           Max Atmospheric Speed
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipCrew"
@@ -76,7 +77,7 @@
           Crew
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipPassengers"
@@ -86,7 +87,7 @@
           Passengers
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipCargoCapacity"
@@ -96,7 +97,7 @@
           Cargo capacity
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipConsumables"
@@ -106,7 +107,7 @@
           Consumables
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipHyperdrive"
@@ -116,7 +117,7 @@
           Hyperdrive rate
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="mglt"
@@ -126,7 +127,7 @@
           MGLT
         </label>
       </div>
-      <div class="input mdl-js-textfield input--floating-label">
+      <div v-mdl class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input type="text"
                class="mdl-textfield__input"
                id="starshipClass"
@@ -172,5 +173,9 @@ export default {
       });
     },
   },
+  updated() {
+    const mdlInputs = document.querySelectorAll('.mdl-textfield');
+    mdlInputs.forEach(value => value.MaterialTextfield.checkDirty());
+  }
 };
 </script>
