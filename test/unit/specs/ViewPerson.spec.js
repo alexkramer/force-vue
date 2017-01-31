@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import ViewPerson from 'src/components/ViewPerson';
+import ViewPerson from 'src/components/ViewPerson.vue';
 
 describe('ViewPerson.vue', () => {
   it('should render correct contents', () => {
