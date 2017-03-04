@@ -62,6 +62,34 @@ module.exports = {
       .end()
   },
 
+  'verify starship record has thirteen table records': function (browser) {
+    browser
+      .url(browser.launchUrl)
+      .waitForElementVisible(ui.dev.select, 5000)
+      .setValue(ui.dev.select,ui.dev.selectValue.starship)
+      .click(ui.dev.select)
+      .pause(1000)
+      .keys(['\uE006'])
+      .pause(3000)
+      .assert.elementPresent(starshipPage.elements.randomStarshipButton)
+      .assert.elementCount(ui.dev.tableRecord, 13)
+      .waitForElementVisible(starshipPage.elements.nameTextbox, 5000) // Unsure how to hook up @nameTextBox
+      .assert.elementPresent(starshipPage.elements.nameTextbox) // The @nameTextbox was not working
+      .assert.elementPresent(starshipPage.elements.modelTextbox)
+      .assert.elementPresent(starshipPage.elements.manufacturerTextbox)
+      .assert.elementPresent(starshipPage.elements.costInCreditsTextbox)
+      .assert.elementPresent(starshipPage.elements.lengthTextbox)
+      .assert.elementPresent(starshipPage.elements.maxAtmosTextbox)
+      .assert.elementPresent(starshipPage.elements.passengersTextbox)
+      .assert.elementPresent(starshipPage.elements.cargoTextbox)
+      .assert.elementPresent(starshipPage.elements.consumablesTextbox)
+      .assert.elementPresent(starshipPage.elements.hyperdriveTextbox)
+      .assert.elementPresent(starshipPage.elements.mgltTextbox)
+      .assert.elementPresent(starshipPage.elements.starshipClassTextbox)
+      .pause(5000)
+      .end()
+  },
+
   'verify selecting random person: name field not empty': function (browser) {
     browser
       .url(browser.launchUrl)
