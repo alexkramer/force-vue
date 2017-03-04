@@ -10,7 +10,7 @@ module.exports = {
   'default e2e tests': function (browser) {
     browser
     .url(browser.launchUrl)
-      .waitForElementVisible(ui.dev.app, 5000)
+      .waitForElementVisible(ui.dev.select, 5000)
       .assert.elementPresent(personPage.elements.randomPersonButton)
       .pause(5000)
       .end()
@@ -19,7 +19,7 @@ module.exports = {
   'verify person record has seven table records': function (browser) {
     browser
       .url(browser.launchUrl)
-      .waitForElementVisible(ui.dev.app, 5000)
+      .waitForElementVisible(ui.dev.select, 5000)
       .assert.elementPresent(personPage.elements.randomPersonButton)
       .assert.elementCount(ui.dev.tableRecord, 7)
       .waitForElementVisible(personPage.elements.nameTextbox, 5000) // Unsure how to hook up @nameTextBox
@@ -37,7 +37,7 @@ module.exports = {
   'verify planet record has nine table records': function (browser) {
     browser
       .url(browser.launchUrl)
-      .waitForElementVisible(ui.dev.app, 5000)
+      .waitForElementVisible(ui.dev.select, 5000)
       .setValue(ui.dev.select,ui.dev.selectValue.planet)
       .click(ui.dev.select)
       .pause(1000)
@@ -62,7 +62,7 @@ module.exports = {
   'verify selecting random person: name field not empty': function (browser) {
     browser
       .url(browser.launchUrl)
-      .waitForElementVisible(ui.dev.app, 5000)
+      .waitForElementVisible(ui.dev.select, 5000)
       .assert.elementPresent(personPage.elements.randomPersonButton)
       .click(personPage.elements.randomPersonButton)
       .getText(ui.dev.tableRecord, function(result) {
@@ -74,7 +74,7 @@ module.exports = {
   'verify person button has expected value: face RANDOM PERSON': function (browser) {
     browser
       .url(browser.launchUrl)
-      .waitForElementVisible(ui.dev.app, 5000)
+      .waitForElementVisible(ui.dev.select, 5000)
       .getText(personPage.elements.randomPersonButton, function(result) {
         this.assert.equal(result.value,'face RANDOM PERSON')
       })
@@ -84,7 +84,7 @@ module.exports = {
   'verify planet button has expected value: public RANDOM PLANET': function (browser) {
     browser
       .url(browser.launchUrl)
-      .waitForElementVisible(ui.dev.app, 5000)
+      .waitForElementVisible(ui.dev.select, 5000)
       .setValue(ui.dev.select,ui.dev.selectValue.planet)
       .click(ui.dev.select)
       .pause(1000)
@@ -100,7 +100,7 @@ module.exports = {
   'starship e2e tests': function (browser) {
     browser
     .url(browser.launchUrl)
-      .waitForElementVisible(ui.dev.app, 5000)
+      .waitForElementVisible(ui.dev.select, 5000)
       .setValue(ui.dev.select,ui.dev.selectValue.starship)
       .click(ui.dev.select)
       .pause(1000)
