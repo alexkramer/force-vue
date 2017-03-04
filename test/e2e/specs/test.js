@@ -5,6 +5,9 @@ var ui = require('../ui-properties/ui-locators.js')
 var personPage = require('../pages/person.js')
 var planetPage = require('../pages/planet.js')
 var starshipPage = require('../pages/starship.js')
+var helpPage = require('../pages/help.js')
+var privacyPage = require('../pages/privacy.js')
+
 
 module.exports = {
   'default e2e tests': function (browser) {
@@ -112,6 +115,27 @@ module.exports = {
       .pause(3000)
       .getText(ui.dev.tableRecord, function(result) {
         this.assert.notEqual(result,'')
+      })
+      .end()
+  },
+
+  'verify that help page loads with the correct title': function (browser) {
+    browser
+    .url(browser.launchUrl)
+      .waitForElementVisible(ui.dev.select, 5000)
+      .click(helpPage.elements.helpLink)
+      .getText(helpPage.elements.helpTitle, function(text) {
+        this.assert.equal(text.value, 'Help')
+      })
+      .end()
+  },
+  'verify that privacy and terms page loads with the correct title': function (browser) {
+    browser
+    .url(browser.launchUrl)
+      .waitForElementVisible(ui.dev.select, 5000)
+      .click(privacyPage.elements.privacyLink)
+      .getText(privacyPage.elements.privacyTitle, function(text) {
+        this.assert.equal(text.value, 'Privacy & Terms')
       })
       .end()
   }
