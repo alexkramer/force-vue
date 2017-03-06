@@ -31,8 +31,8 @@
             </div>
             <div class="mdl-mini-footer__right-section">
                 <ul class="mdl-mini-footer__link-list">
-                    <li><router-link to="/help">Help</router-link></li>
-                    <li><router-link to="/terms">Privacy & Terms</router-link></li>
+                    <li><router-link to="/help" data-qa="helpLink">Help</router-link></li>
+                    <li><router-link to="/terms" data-qa="privacyLink">Privacy & Terms</router-link></li>
                 </ul>
             </div>
         </footer>

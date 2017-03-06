@@ -1,17 +1,17 @@
 module.exports = {
   elements: {
     randomStarshipButton: '.randStarshipBtn',
-    nameTextbox: '[data-qa=nameTextbox] > div > input',
-    modelTextbox: '[data-qa=modelTextbox] > div > input',
-    manufacturerTextbox: '[data-qa=manufacturerTextbox] > div > input',
-    costInCreditsTextbox: '[data-qa=costInCreditsTextbox] > div > input',
-    lengthTextbox: '[data-qa=lengthTextbox] > div > input',
-    maxAtmosTextbox: '[data-qa=maxAtmosTextbox] > div > input',
-    passengersTextbox: '[data-qa=passengersTextbox] > div > input',
-    cargoTextbox: '[data-qa=cargoTextbox] > div > input',
-    consumablesTextbox: '[data-qa=consumablesTextbox] > div > input',
-    hyperdriveTextbox: '[data-qa=hyperdriveTextbox] > div > input',
-    mgltTextbox: '[data-qa=mgltTextbox] > div > input',
-    starshipClassTextbox: '[data-qa=starshipClassTextbox] > div > input'
+    nameTextbox: '[data-qa=nameTextbox]',
+    modelTextbox: '[data-qa=modelTextbox]',
+    manufacturerTextbox: '[data-qa=manufacturerTextbox]',
+    costInCreditsTextbox: '[data-qa=costInCreditsTextbox]',
+    lengthTextbox: '[data-qa=lengthTextbox]',
+    maxAtmosTextbox: '[data-qa=maxAtmosTextbox]',
+    passengersTextbox: '[data-qa=passengersTextbox]',
+    cargoTextbox: '[data-qa=cargoTextbox]',
+    consumablesTextbox: '[data-qa=consumablesTextbox]',
+    hyperdriveTextbox: '[data-qa=hyperdriveTextbox]',
+    mgltTextbox: '[data-qa=mgltTextbox]',
+    starshipClassTextbox: '[data-qa=starshipClassTextbox]'
   }
 };

@@ -5,6 +5,9 @@ import App from './App.vue';
 import ApiViewer from './components/ApiViewer.vue';
 import About from './components/About.vue';
 import Contact from './components/Contact.vue';
+import Help from './components/Help.vue';
+import PrivacyAndTerms from './components/PrivacyAndTerms.vue';
+
 
 const { componentHandler } = window;
 /* eslint-disable no-new */
@@ -22,6 +25,8 @@ const router = new VueRouter({
     { path: '/home', component: ApiViewer },
     { path: '/about', component: About },
     { path: '/contact', component: Contact },
+    { path: '/help', component: Help },
+    { path: '/terms', component: PrivacyAndTerms },
   ],
 });
 
