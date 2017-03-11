@@ -1,13 +1,13 @@
 {
   "name": "force-vue",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Vue with SWAPI integration",
   "author": "alexkramer <ackramer19@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "unit": "karma start test/unit/karma.conf.js --single-run",
+    "unit": "./node_modules/karma/bin/karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
