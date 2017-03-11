@@ -12,10 +12,10 @@ var privacyPage = require('../pages/privacy.js')
 module.exports = {
   'default e2e tests': function (browser) {
     browser
-    .url(browser.launchUrl)
+      .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.select, 5000)
       .assert.elementPresent(personPage.elements.randomPersonButton)
-      .pause(5000)
+      .pause(2000)
       .end()
   },
 
@@ -33,7 +33,7 @@ module.exports = {
       .assert.elementPresent(personPage.elements.eyeColorTextbox)
       .assert.elementPresent(personPage.elements.birthYearTextbox)
       .assert.elementPresent(personPage.elements.genderTextbox)
-      .pause(5000)
+      .pause(2000)
       .end()
   },
 
@@ -58,7 +58,7 @@ module.exports = {
       .assert.elementPresent(planetPage.elements.terrainTextbox)
       .assert.elementPresent(planetPage.elements.surfaceWaterTextbox)
       .assert.elementPresent(planetPage.elements.populationTextbox)
-      .pause(5000)
+      .pause(2000)
       .end()
   },
 
@@ -86,7 +86,7 @@ module.exports = {
       .assert.elementPresent(starshipPage.elements.hyperdriveTextbox)
       .assert.elementPresent(starshipPage.elements.mgltTextbox)
       .assert.elementPresent(starshipPage.elements.starshipClassTextbox)
-      .pause(5000)
+      .pause(2000)
       .end()
   },
 
@@ -130,7 +130,7 @@ module.exports = {
 
   'starship e2e tests': function (browser) {
     browser
-    .url(browser.launchUrl)
+      .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.select, 5000)
       .setValue(ui.dev.select,ui.dev.selectValue.starship)
       .click(ui.dev.select)
@@ -149,7 +149,7 @@ module.exports = {
 
   'verify that help page loads with the correct title': function (browser) {
     browser
-    .url(browser.launchUrl)
+      .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.select, 5000)
       .click(helpPage.elements.helpLink)
       .getText(helpPage.elements.helpTitle, function(text) {
@@ -159,7 +159,7 @@ module.exports = {
   },
   'verify that privacy and terms page loads with the correct title': function (browser) {
     browser
-    .url(browser.launchUrl)
+      .url(browser.launchUrl)
       .waitForElementVisible(ui.dev.select, 5000)
       .click(privacyPage.elements.privacyLink)
       .getText(privacyPage.elements.privacyTitle, function(text) {
