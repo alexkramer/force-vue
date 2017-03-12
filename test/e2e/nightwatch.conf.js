@@ -1,3 +1,6 @@
+require('babel-register')
+var config = require('../../config')
+
 // http://nightwatchjs.org/guide#settings-file
 module.exports = {
   "src_folders": ["test/e2e/specs"],
@@ -6,22 +9,23 @@ module.exports = {
   "page_objects_path": ["test/e2e/pages"],
 
   "selenium": {
-    "start_process": true,
-    "server_path": require('selenium-server').path,
-    "host": "127.0.0.1",
-    "port": 4444,
-    "cli_args": {
-      "webdriver.chrome.driver": require('chromedriver').path,
-      "webriver.gecko.driver": require('geckodriver').path
+    start_process: true,
+    server_path: require('selenium-server').path,
+    host: '127.0.0.1',
+    port: 4444,
+    cli_args: {
+      'webdriver.chrome.driver': require('chromedriver').path
     }
   },
 
   "test_settings": {
     "default": {
-      "launch_url": "http://localhost:8080/#/home",
-      "selenium_port": 4444,
-      "selenium_host": "localhost",
-      "silent": true
+      selenium_port: 4444,
+      selenium_host: 'localhost',
+      silent: true,
+      globals: {
+        devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
+      }
     },
 
     "chrome": {

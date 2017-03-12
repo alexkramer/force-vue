@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import ViewStarship from 'src/components/ViewStarship.vue';
+import ViewStarship from '@/components/ViewStarship.vue';
 
 describe('ViewStarship.vue', () => {
   it('should render correct contents', () => {

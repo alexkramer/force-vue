@@ -27,6 +27,7 @@ const router = new VueRouter({
     { path: '/contact', component: Contact },
     { path: '/help', component: Help },
     { path: '/terms', component: PrivacyAndTerms },
+    { path: '/', redirect: '/home' }
   ],
 });
 

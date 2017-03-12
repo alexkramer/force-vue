@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import ViewPlanet from 'src/components/ViewPlanet.vue';
+import ViewPlanet from '@/components/ViewPlanet.vue';
 
 describe('ViewPlanet.vue', () => {
   it('should render correct contents', () => {
@@ -7,6 +7,6 @@ describe('ViewPlanet.vue', () => {
       template: '<div><view-planet></view-Planet></div>',
       components: { ViewPlanet },
     }).$mount();
-    expect(vm.$el.querySelector('.randPlanetBtn').textContent).to.contain('Random Planet');
+    expect(vm.$el.querySelector('.randPlanetBtn').textContent).to.contain('Random planet');
   });
 });

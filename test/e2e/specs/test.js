@@ -8,11 +8,10 @@ var starshipPage = require('../pages/starship.js')
 var helpPage = require('../pages/help.js')
 var privacyPage = require('../pages/privacy.js')
 
-
 module.exports = {
   'default e2e tests': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.globals.devServerURL)
       .waitForElementVisible(ui.dev.select, 5000)
       .assert.elementPresent(personPage.elements.randomPersonButton)
       .pause(2000)
@@ -21,7 +20,7 @@ module.exports = {
 
   'verify person record has seven table records': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.globals.devServerURL)
       .waitForElementVisible(ui.dev.select, 5000)
       .assert.elementPresent(personPage.elements.randomPersonButton)
       .assert.elementCount(ui.dev.tableRecord, 7)
@@ -39,7 +38,7 @@ module.exports = {
 
   'verify planet record has nine table records': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.globals.devServerURL)
       .waitForElementVisible(ui.dev.select, 5000)
       .setValue(ui.dev.select,ui.dev.selectValue.planet)
       .click(ui.dev.select)
@@ -64,7 +63,7 @@ module.exports = {
 
   'verify starship record has thirteen table records': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.globals.devServerURL)
       .waitForElementVisible(ui.dev.select, 5000)
       .setValue(ui.dev.select,ui.dev.selectValue.starship)
       .click(ui.dev.select)
@@ -92,7 +91,7 @@ module.exports = {
 
   'verify selecting random person: name field not empty': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.globals.devServerURL)
       .waitForElementVisible(ui.dev.select, 5000)
       .assert.elementPresent(personPage.elements.randomPersonButton)
       .click(personPage.elements.randomPersonButton)
@@ -104,7 +103,7 @@ module.exports = {
 
   'verify person button has expected value: face RANDOM PERSON': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.globals.devServerURL)
       .waitForElementVisible(ui.dev.select, 5000)
       .getText(personPage.elements.randomPersonButton, function(result) {
         this.assert.equal(result.value,'face RANDOM PERSON')
@@ -114,7 +113,7 @@ module.exports = {
 
   'verify planet button has expected value: public RANDOM PLANET': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.globals.devServerURL)
       .waitForElementVisible(ui.dev.select, 5000)
       .setValue(ui.dev.select,ui.dev.selectValue.planet)
       .click(ui.dev.select)
@@ -130,7 +129,7 @@ module.exports = {
 
   'starship e2e tests': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.globals.devServerURL)
       .waitForElementVisible(ui.dev.select, 5000)
       .setValue(ui.dev.select,ui.dev.selectValue.starship)
       .click(ui.dev.select)
@@ -149,7 +148,7 @@ module.exports = {
 
   'verify that help page loads with the correct title': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.globals.devServerURL)
       .waitForElementVisible(ui.dev.select, 5000)
       .click(helpPage.elements.helpLink)
       .getText(helpPage.elements.helpTitle, function(text) {
@@ -159,7 +158,7 @@ module.exports = {
   },
   'verify that privacy and terms page loads with the correct title': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.globals.devServerURL)
       .waitForElementVisible(ui.dev.select, 5000)
       .click(privacyPage.elements.privacyLink)
       .getText(privacyPage.elements.privacyTitle, function(text) {

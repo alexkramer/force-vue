@@ -2,7 +2,7 @@
 // Need to figure out how to fix the linting issues above
 // Basically turning them off to continue working on unit tests
 
-import ApiCache from 'src/api/api-cache';
+import ApiCache from '@/api/api-cache';
 
 describe('ApiCache', () => {
   describe('put()', () => {
