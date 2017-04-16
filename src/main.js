@@ -1,5 +1,6 @@
 import Vue from 'vue';
 // Import router and components
+import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import App from './App.vue';
 import ApiViewer from './components/ApiViewer.vue';
@@ -15,7 +16,7 @@ const { componentHandler } = window;
 // Setup Vue to use Router
 Vue.use(VueRouter);
 // Setup Resource
-Vue.use(require('vue-resource'));
+Vue.use(VueResource);
 
 // Set API host
 Vue.http.options.root = process.env.API_HOST;
