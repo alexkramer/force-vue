@@ -2,6 +2,8 @@
 
 > Vue application with [SWAPI](http://swapi.co/) integration
 
+> Used as part of candidate evaluation while building my team at Good Start Genetics
+
 ## Build and Deployment Information
 [![Circle CI](https://circleci.com/gh/alexkramer/force-vue/tree/master.svg?style=svg)](https://circleci.com/gh/alexkramer/force-vue/tree/master)
 [![Code Climate GPA](https://codeclimate.com/github/alexkramer/force-vue/badges/gpa.svg?style=svg)](https://codeclimate.com/github/alexkramer/force-vue)
